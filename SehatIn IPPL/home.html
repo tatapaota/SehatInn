@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sehat In - Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home-page">
+  <div class="container">
+    <h2 class="today-title">Today 🩺</h2>
+
+    <!-- Date -->
+    <div class="date-card">
+      <label for="date">Date</label>
+      <div class="date-wrapper">
+        <input type="date" id="date" value="2025-09-08">
+        <img src="aset/calendar.png" alt="calendar" class="icon-calendar">
+      </div>
+      <small>DD/MM/YYYY</small>
+    </div>
+
+    <!-- Medication Reminder -->
+    <div class="med-card">
+      <div class="med-header">
+        <p><strong>💊 Minum obatmu!</strong></p>
+        <img src="aset/bell.png" alt="notif" class="icon-bell">
+      </div>
+
+      <div class="med-body">
+        <p><b>Frequency</b></p>
+        <div class="option-group" id="freqOptions">
+          <button class="option active">Everyday</button>
+          <button class="option">Once a week</button>
+          <button class="option">Twice a day</button>
+        </div>
+
+        <p><b>Schedule</b></p>
+        <div class="option-group" id="scheduleOptions">
+          <button class="option active">After Breakfast</button>
+          <button class="option">Before Lunch</button>
+          <button class="option active">After Dinner</button>
+        </div>
+
+        <p><b>Notification Time</b></p>
+        <div class="time-container" id="timeContainer">
+          <div class="time-row">
+            <label>After Breakfast</label>
+            <input type="time" value="08:00">
+          </div>
+          <div class="time-row">
+            <label>After Dinner</label>
+            <input type="time" value="19:00">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Medication -->
+    <button class="add-med-btn" id="addBtn">➕ Add Medication</button>
+
+    <!-- List obat ditambahkan -->
+    <ul id="medList" class="med-list"></ul>
+  </div>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="home.html" class="nav-item active">🏠</a>
+    <a href="medication.html" class="nav-item">💊</a>
+    <a href="profile.html" class="nav-item">👤</a>
+  </nav>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Pilih Obat</h3>
+      <select id="medicineSelect">
+        <option value="">-- Pilih Obat --</option>
+        <option>Paracetamol</option>
+        <option>Ibuprofen</option>
+        <option>Amoxicillin</option>
+        <option>Vitamin C</option>
+      </select>
+      <div class="popup-buttons">
+        <button id="saveBtn">Simpan</button>
+        <button id="closeBtn">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/home.js"></script>
+</body>
+</html>
