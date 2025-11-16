@@ -1,28 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
   
-  // bantuan fungsi dan penyimpanan
   const AppStorage = {
     data: {},
     
     set(key, value) {
       this.data[key] = value;
       try {
-        sessionStorage.setItem(key, JSON.stringify(value));
+        localStorage.setItem(key, JSON.stringify(value)); 
       } catch (e) {
-        console.warn('SessionStorage unavailable, using memory only');
+        console.warn('LocalStorage unavailable, using memory only'); 
       }
     },
     
     get(key) {
       if (this.data[key]) return this.data[key];
       try {
-        const stored = sessionStorage.getItem(key);
+        const stored = localStorage.getItem(key); 
         if (stored) {
           this.data[key] = JSON.parse(stored);
           return this.data[key];
         }
       } catch (e) {
-        console.warn('SessionStorage unavailable');
+        console.warn('LocalStorage unavailable'); 
       }
       return null;
     },
@@ -30,12 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
     clear() {
       this.data = {};
       try {
-        sessionStorage.clear();
+        localStorage.clear();
       } catch (e) {
-        console.warn('SessionStorage unavailable');
+        console.warn('LocalStorage unavailable'); 
       }
     }
   };
+
+  window.AppStorage = AppStorage;
+  console.log('AppStorage loaded and exposed to window');
 
   function formatDate(dateStr) {
     if (!dateStr) return '-';
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (logoImg) {
     logoImg.style.cursor = 'pointer';
     logoImg.addEventListener("click", () => {
-      window.location.href = "Welcome.html";
+      window.location.href = "Welcome.html"; 
     });
     
     setTimeout(() => {
@@ -153,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if ((isUsernameMatch || isEmailMatch) && isPasswordMatch) {
         AppStorage.set('currentUser', registeredUser);
         AppStorage.set('isLoggedIn', true);
-        showNotification('Login berhasil! Selamat datang 👋', 'success');
+        showNotification('Login berhasil! Selamat datang 👋', 'success'); 
         
         setTimeout(() => {
           window.location.href = "Home.html";
@@ -247,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
         createScheduleItemWithMeds(schedulePlaceholders[i] || 'Masukkan jadwal', defaultTimes[i] || '00:00');
       }
 
-      showNotification(`✔ Diatur untuk ${frequency}`, 'success');
+      showNotification(`✓ Diatur untuk ${frequency}`, 'success'); 
     }
 
     function createScheduleItemWithMeds(placeholder = '', defaultTime = '00:00') {
@@ -259,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px;">
           <input type="text" class="form-input schedule-input" placeholder="${placeholder}" style="flex: 1;">
           <input type="time" class="form-input time-input" value="${defaultTime}" style="width: 100px;">
-          <button type="button" class="remove-schedule-btn" style="padding: 6px 10px; background: #e57373; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 14px;">❌</button>
+          <button type="button" class="remove-schedule-btn" style="padding: 6px 10px; background: #e57373; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 14px;">✕</button>
         </div>
         <div class="med-selector-container" style="margin-top: 8px;">
           <label style="font-size: 13px; color: #666; display: block; margin-bottom: 4px;">💊 Obat yang diminum:</label>
@@ -756,7 +758,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    // Initialize calendar
     updateCalendar();
     
     // Add event listeners for navigation buttons
@@ -810,7 +811,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div style="background: white; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
         <p style="margin: 8px 0; font-weight: 600;">💊 Daftar Semua Obat:</p>
         <ul style="margin: 8px 0 8px 20px; list-style: none;">
-          ${scheduleData.allMedications.map(m => `<li style="padding: 4px 0;"><strong>✔ ${m.name}</strong> <small style="color: #666;">(${m.dose})</small></li>`).join('')}
+          ${scheduleData.allMedications.map(m => `<li style="padding: 4px 0;"><strong>✓ ${m.name}</strong> <small style="color: #666;">(${m.dose})</small></li>`).join('')}
         </ul>
       </div>
       ` : ''}
@@ -990,12 +991,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (logoutItem) {
       logoutItem.addEventListener('click', function() {
         if (confirm('Yakin ingin logout?')) {
+          // Simpan data sebelum logout
           const savedSchedule = AppStorage.get('userSchedule');
           const confirmedSchedule = AppStorage.get('confirmedSchedule');
           const registeredUser = AppStorage.get('registeredUser');
           
+          // Hapus status login saja
           AppStorage.set('isLoggedIn', false);
+          AppStorage.set('currentUser', null);
           
+          // Pertahankan data user dan jadwal
           if (savedSchedule) {
             AppStorage.set('userSchedule', savedSchedule);
           }
@@ -1133,14 +1138,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-}); // END OF DOMContentLoaded
+}); 
 
 // TERMS AND CONDITIONS - Accept Function
 function acceptTerms() {
   try {
-    sessionStorage.setItem('termsAccepted', 'true');
+    localStorage.setItem('termsAccepted', 'true'); 
   } catch (e) {
-    console.warn('SessionStorage unavailable');
+    console.warn('LocalStorage unavailable'); 
   }
   
   const notification = document.createElement('div');
@@ -1165,7 +1170,7 @@ function acceptTerms() {
   }, 2000);
 }
 
-// ANIMATION CSS (inject ke head)
+// ANIMATION CSS 
 const style = document.createElement('style');
 style.textContent = `
 @keyframes slideIn {
@@ -1216,4 +1221,4 @@ style.textContent = `
   transform: scale(0.98) !important;
 }
 `;
-document.head.appendChild(style)
+document.head.appendChild(style);
