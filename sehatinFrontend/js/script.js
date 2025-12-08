@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(() => {
       window.location.href = "Welcome.html";
-    }, 7000);
+    }, 3000);
   }
 
   // REGISTER PAGE (register.html)
@@ -1392,3 +1392,4 @@ style.textContent = `
 }
 `;
 document.head.appendChild(style);
+
