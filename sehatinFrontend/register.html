@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Pengaturan karakter agar mendukung berbagai simbol -->
+    <meta charset="UTF-8" />
+
+    <!-- Pengaturan viewport agar tampilan responsif di berbagai perangkat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Judul halaman yang tampil di tab browser -->
+    <title>Daftar - Sehat In</title>
+
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <!-- Body halaman registrasi -->
+  <body class="form-page">
+    <!-- Container utama form -->
+    <div class="form-container">
+      <!-- Judul form registrasi -->
+      <h2 class="form-title">Daftar</h2>
+
+      <!-- Garis dekoratif di bawah judul -->
+      <div class="underline-title"></div>
+
+      <!-- Form registrasi pengguna -->
+      <form id="registerForm">
+        <!-- Input untuk username -->
+        <div class="input-group">
+          <!-- Icon user -->
+          <img src="aset/user.png" alt="user icon" class="icon-img" />
+
+          <!-- Field input username -->
+          <input type="text" name="username" placeholder="Username" required />
+        </div>
+
+        <!-- Input password dengan fitur tampil/sembunyi -->
+        <div class="input-group password-wrapper">
+          <!-- Icon gembok -->
+          <img src="aset/lock_2.png" alt="lock icon" class="icon-img" />
+
+          <!-- Field input password -->
+          <input
+            type="password"
+            name="password"
+            id="passwordInput"
+            placeholder="Password"
+            required
+          />
+
+          <!-- Tombol untuk toggle visibility password -->
+          <div
+            class="toggle-password-wrapper"
+            onclick="togglePasswordVisibility()"
+          >
+            <!-- Icon mata untuk toggle password -->
+            <img
+              src="aset/eye-closed.png"
+              alt="toggle password"
+              class="toggle-password"
+              id="togglePasswordIcon"
+            />
+          </div>
+        </div>
+
+        <!-- Input email pengguna -->
+        <div class="input-group">
+          <!-- Icon email -->
+          <img src="aset/email.png" alt="email icon" class="icon-img" />
+
+          <!-- Field input email -->
+          <input type="email" name="email" placeholder="Email" required />
+        </div>
+
+        <!-- Input nomor telepon -->
+        <div class="input-group">
+          <!-- Icon telepon -->
+          <img src="aset/phone.png" alt="phone icon" class="icon-img" />
+
+          <!-- Field input nomor telepon -->
+          <input
+            type="tel"
+            name="notelp"
+            placeholder="Nomor Telepon"
+            required
+          />
+        </div>
+
+        <!-- Tombol untuk mengirim form registrasi -->
+        <button type="submit" class="btn-primary">Daftar</button>
+
+        <!-- Link menuju halaman login -->
+        <p class="login-link">
+          Sudah punya akun? <a href="Login.html">Log In</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- Gambar dekorasi halaman -->
+    <img src="aset/obat-dekorasi.png" class="decor" alt="Dekorasi" />
+
+    <!-- File JavaScript untuk fungsi interaktif -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

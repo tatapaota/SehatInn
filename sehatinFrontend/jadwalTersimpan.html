@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Pengaturan encoding karakter -->
+    <meta charset="UTF-8" />
+
+    <!-- Pengaturan tampilan agar responsif -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Judul halaman -->
+    <title>Jadwal Tersimpan - Sehat In</title>
+
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <!-- Body halaman jadwal -->
+  <body class="schedule-page">
+    <!-- Container utama -->
+    <div class="container">
+      <!-- Header halaman -->
+      <div class="header">
+        <!-- Icon kalender -->
+        <img src="aset/kalender.png" alt="Pill Icon" class="header-img" />
+
+        <!-- Judul header -->
+        <h1>Schedule your medication!</h1>
+      </div>
+
+      <!-- Kartu kalender -->
+      <div class="calendar-card">
+        <!-- Navigasi bulan -->
+        <div class="month-nav">
+          <!-- Tombol bulan sebelumnya -->
+          <button class="nav-btn prev-btn">‹</button>
+
+          <!-- Menampilkan bulan dan tahun -->
+          <div class="month-year">
+            <span class="month">Oct</span>
+            <span class="separator">╱</span>
+            <span class="year">2025</span>
+          </div>
+
+          <!-- Tombol bulan berikutnya -->
+          <button class="nav-btn next-btn">›</button>
+        </div>
+
+        <!-- Nama hari dalam seminggu -->
+        <div class="week-days">
+          <div class="day">S</div>
+          <div class="day">M</div>
+          <div class="day">T</div>
+          <div class="day">W</div>
+          <div class="day">T</div>
+          <div class="day">F</div>
+          <div class="day">S</div>
+        </div>
+
+        <!-- Grid kalender (tanggal akan diisi lewat JavaScript) -->
+        <div class="calendar-grid"></div>
+      </div>
+    </div>
+
+    <!-- Navigasi bawah aplikasi -->
+    <nav class="bottom-nav">
+      <!-- Menu Home -->
+      <a href="Home.html" class="nav-item">
+        <img src="aset/home.png" alt="home" class="nav-icon" />
+      </a>
+
+      <!-- Menu Jadwal (aktif) -->
+      <a href="jadwalTersimpan.html" class="nav-item active">
+        <img src="aset/schedule.png" alt="schedule" class="nav-icon" />
+      </a>
+
+      <!-- Menu Profile -->
+      <a href="profile.html" class="nav-item">
+        <img src="aset/profile.png" alt="profile" class="nav-icon" />
+      </a>
+    </nav>
+
+    <!-- Menghubungkan file JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

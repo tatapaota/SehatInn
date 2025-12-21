@@ -1,0 +1,2619 @@
+/* ========================================
+   RESET CSS - Menghapus styling default browser
+   ======================================== */
+* {
+  margin: 0;
+  /* Menghapus margin default dari semua elemen */
+  padding: 0;
+  /* Menghapus padding default dari semua elemen */
+  box-sizing: border-box;
+  /* Membuat width & height include padding & border */
+}
+
+/* HTML & BODY - Setting dasar untuk halaman */
+html, body {
+  overflow-x: hidden;
+  /* Mencegah scroll horizontal (kiri-kanan) */
+  max-width: 100vw;
+  /* Maksimal lebar = 100% viewport width */
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  /* Font default aplikasi */
+  color: #333;
+  /* Warna teks abu-abu gelap */
+  line-height: 1.5;
+  /* Jarak antar baris teks */
+}
+
+/* ========================================
+   SPLASH SCREEN - Halaman pembuka aplikasi
+   ======================================== */
+.splash-screen {
+  display: flex;
+  /* Menggunakan flexbox untuk layout */
+  flex-direction: column;
+  /* Atur anak elemen vertikal (atas ke bawah) */
+  align-items: center;
+  /* Posisi konten di tengah horizontal */
+  justify-content: center;
+  /* Posisi konten di tengah vertikal */
+  height: 100vh;
+  /* Tinggi = 100% viewport height (full screen) */
+  background: linear-gradient(to bottom, #cfd8ff, #f6f7ff);
+  /* Gradasi biru ke putih */
+}
+
+.logo-container {
+  text-align: center;
+  /* Teks di dalam container rata tengah */
+}
+
+/* Lingkaran untuk logo */
+.logo-circle {
+  width: 230px;
+  /* Lebar lingkaran */
+  height: 230px;
+  /* Tinggi lingkaran (sama dengan lebar = bulat) */
+  background-color: #f1f1ff;
+  /* Warna background ungu muda */
+  border-radius: 50%;
+  /* Membuat bentuk bulat sempurna (50%) */
+  display: flex;
+  /* Gunakan flexbox */
+  justify-content: center;
+  /* Konten tengah horizontal */
+  align-items: center;
+  /* Konten tengah vertikal */
+  flex-direction: column;
+  /* Atur anak vertikal */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  /* Bayangan lembut */
+  transition: transform 0.4s ease;
+  /* Animasi transformasi 0.4 detik */
+  border: 4px solid #9482e6;
+  /* Border ungu 4px */
+}
+
+/* Efek hover pada lingkaran logo */
+.logo-circle:hover {
+  transform: scale(1.05);
+  /* Perbesar 5% saat di-hover */
+}
+
+/* Gambar logo di dalam lingkaran */
+.logo-img {
+  width: 115px;
+  /* Lebar gambar */
+  height: auto;
+  /* Tinggi otomatis (proporsional) */
+  display: block;
+  /* Display block agar tidak ada space bawah */
+  cursor: pointer;
+  /* Kursor jadi tangan saat dihover */
+  margin-top: -5px;
+  /* Geser ke atas 5px */
+  transform: translateX(4px);
+  /* Geser ke kanan 4px */
+  transition: transform 0.3s ease;
+  /* Animasi transformasi */
+}
+
+/* Efek hover pada gambar logo */
+.logo-img:hover {
+  transform: translateX(10px) scale(1.05);
+  /* Geser kanan 10px & perbesar 5% */
+}
+
+/* Nama aplikasi di bawah logo */
+.app-name {
+  font-family: "Playfair Display", serif;
+  /* Font serif elegan */
+  font-size: 23px;
+  /* Ukuran font */
+  font-weight: 550;
+  /* Ketebalan font semi-bold */
+  color: #5b7fb4;
+  /* Warna biru */
+  font-style: italic;
+  /* Teks miring */
+  margin-top: -1px;
+  /* Geser ke atas 1px */
+  text-align: center;
+  /* Rata tengah */
+  letter-spacing: 3px;
+  /* Jarak antar huruf 3px */
+}
+
+/* ========================================
+   WELCOME SCREEN - Halaman selamat datang
+   ======================================== */
+.welcome-screen {
+  background: linear-gradient(#cfd8ff, #ffffff);
+  /* Gradasi biru ke putih */
+  height: 100vh;
+  /* Tinggi full screen */
+  padding: 40px 30px;
+  /* Padding 40px atas-bawah, 30px kiri-kanan */
+  display: flex;
+  /* Gunakan flexbox */
+  flex-direction: column;
+  /* Layout vertikal */
+  justify-content: space-between;
+  /* Space antara elemen atas & bawah */
+  font-family: "Poppins", sans-serif;
+  /* Font Poppins */
+  position: relative;
+  /* Untuk positioning absolut anak */
+}
+
+/* Konten teks utama */
+.content {
+  margin-top: 60px;
+  /* Jarak dari atas 60px */
+  color: #222;
+  /* Warna teks hitam */
+}
+
+.content h2 {
+  font-size: 18px;
+  /* Ukuran heading */
+  line-height: 1.4;
+  /* Jarak antar baris */
+}
+
+.content .intro {
+  margin-top: 10px;
+  /* Jarak dari elemen atas */
+  font-size: 16px;
+  /* Ukuran font intro */
+  color: #111;
+  /* Warna hampir hitam */
+}
+
+.content .desc {
+  font-size: 14px;
+  /* Ukuran font deskripsi */
+  color: #333;
+  /* Warna abu gelap */
+  margin-top: 10px;
+  /* Jarak dari atas */
+}
+
+/* Container untuk tombol */
+.button-container {
+  display: flex;
+  /* Layout flexbox */
+  gap: 15px;
+  /* Jarak antar tombol 15px */
+  margin-top: 25px;
+  /* Jarak dari atas */
+}
+
+/* Styling tombol umum */
+.btn, .btn-outline {
+  padding: 10px 25px;
+  /* Padding dalam tombol */
+  border-radius: 8px;
+  /* Sudut melengkung 8px */
+  text-decoration: none;
+  /* Hilangkan underline link */
+  font-weight: 600;
+  /* Font tebal */
+  font-size: 14px;
+  /* Ukuran font */
+  text-align: center;
+  /* Teks rata tengah */
+}
+
+/* Tombol solid (background penuh) */
+.btn {
+  background-color: #5066ff;
+  /* Background biru */
+  color: white;
+  /* Teks putih */
+}
+
+/* Tombol outline (hanya border) */
+.btn-outline {
+  background-color: transparent;
+  /* Background transparan */
+  border: 2px solid #5066ff;
+  /* Border biru 2px */
+  color: #5066ff;
+  /* Teks biru */
+}
+
+/* Dekorasi gambar di pojok kanan bawah */
+.decor {
+  width: 300px;
+  /* Lebar gambar dekorasi */
+  position: absolute;
+  /* Posisi absolut (lepas dari flow) */
+  bottom: 10px;
+  /* 10px dari bawah */
+  right: 10px;
+  /* 10px dari kanan */
+  opacity: 0.9;
+  /* Transparansi 90% opaque */
+}
+
+/* ========================================
+   FORM PAGE - Halaman login/register
+   ======================================== */
+body.form-page {
+  display: flex;
+  /* Flexbox untuk centering */
+  justify-content: center;
+  /* Tengah horizontal */
+  align-items: center;
+  /* Tengah vertikal */
+  min-height: 100vh;
+  /* Minimal tinggi full screen */
+  background: linear-gradient(to bottom, #cfd8ff, #f6f7ff);
+  /* Gradasi */
+  font-family: "Poppins", sans-serif;
+  /* Font */
+  padding: 20px;
+  /* Padding sekeliling */
+  position: relative;
+  /* Untuk anak absolut */
+  overflow: hidden;
+  /* Sembunyikan overflow */
+}
+
+/* Container form */
+.form-container {
+  background-color: #b5c3f1;
+  /* Background biru muda */
+  padding: 25px 20px;
+  /* Padding dalam container */
+  border-radius: 20px;
+  /* Sudut melengkung 20px */
+  box-shadow: 0 4px 15px rgb(255, 255, 255);
+  /* Bayangan putih */
+  width: 100%;
+  /* Lebar 100% dari parent */
+  max-width: 300px;
+  /* Maksimal lebar 300px */
+  text-align: center;
+  /* Teks rata tengah */
+  position: relative;
+  /* Untuk z-index */
+  z-index: 10;
+  /* Layer di atas dekorasi */
+}
+
+/* Judul form (Login/Register) */
+.form-title {
+  font-size: 26px;
+  /* Ukuran font besar */
+  font-weight: 700;
+  /* Font bold */
+  margin-bottom: 18px;
+  /* Jarak ke bawah */
+  padding-bottom: 5px;
+  /* Padding bawah */
+  color: #fffefe;
+  /* Warna putih */
+}
+
+/* Group untuk input dengan ikon */
+.input-group {
+  display: flex;
+  /* Flexbox untuk icon + input */
+  align-items: center;
+  /* Align vertical tengah */
+  background: rgba(255, 255, 255, 0.4);
+  /* Background putih semi-transparan */
+  border-radius: 8px;
+  /* Sudut melengkung */
+  padding: 10px 12px;
+  /* Padding dalam */
+  margin: 12px 0;
+  /* Margin atas-bawah */
+  transition: background 0.3s ease;
+  /* Animasi perubahan background */
+  position: relative;
+  /* Untuk z-index */
+  z-index: 11;
+  /* Layer di atas container */
+}
+
+/* Efek hover dan focus pada input group */
+.input-group:hover,
+.input-group:focus-within {
+  background: rgba(255, 255, 255, 0.6);
+  /* Background lebih solid saat hover */
+}
+
+/* Ikon di dalam input group */
+.icon-img, .input-icon {
+  width: 18px;
+  /* Lebar ikon */
+  height: 18px;
+  /* Tinggi ikon */
+  margin-right: 12px;
+  /* Jarak ke input */
+  opacity: 0.9;
+  /* Transparansi */
+  color: rgba(0, 0, 0, 0.7);
+  /* Warna ikon */
+  flex-shrink: 0;
+  /* Jangan shrink saat space sempit */
+}
+
+/* Input field di dalam input-group */
+.input-group input {
+  border: none;
+  /* Hilangkan border */
+  background: transparent;
+  /* Background transparan */
+  flex: 1;
+  /* Ambil sisa space yang ada */
+  outline: none;
+  /* Hilangkan outline focus default */
+  font-size: 15px;
+  /* Ukuran font */
+  color: #333;
+  /* Warna teks */
+  font-family: "Poppins", sans-serif;
+  /* Font */
+  padding: 0;
+  /* Hilangkan padding default */
+  position: relative;
+  /* Untuk z-index */
+  z-index: 12;
+  /* Layer paling atas */
+}
+
+/* Placeholder text di input */
+.input-group input::placeholder {
+  color: rgba(51, 51, 51, 0.6);
+  /* Warna abu-abu transparan */
+  font-style: italic;
+  /* Teks miring */
+}
+
+/* Tombol primary (Login/Register) */
+.btn-primary {
+  margin-top: 12px;
+  /* Jarak dari atas */
+  background-color: #5066ff;
+  /* Background biru */
+  color: white;
+  /* Teks putih */
+  border: none;
+  /* Hilangkan border */
+  border-radius: 10px;
+  /* Sudut melengkung */
+  padding: 11px 28px;
+  /* Padding dalam tombol */
+  font-size: 15px;
+  /* Ukuran font */
+  cursor: pointer;
+  /* Kursor pointer */
+  transition: 0.3s ease;
+  /* Animasi smooth */
+  width: 100%;
+  /* Lebar penuh */
+  position: relative;
+  /* Untuk z-index */
+  z-index: 11;
+  /* Layer di atas container */
+  font-weight: 600;
+  /* Font semi-bold */
+}
+
+/* Efek hover pada tombol primary */
+.btn-primary:hover {
+  background-color: #3d52cc;
+  /* Warna biru lebih gelap */
+  transform: translateY(-2px);
+  /* Naik 2px */
+  box-shadow: 0 4px 8px rgba(80, 102, 255, 0.3);
+  /* Bayangan biru */
+}
+
+/* Efek active (saat diklik) */
+.btn-primary:active {
+  transform: translateY(0);
+  /* Kembali ke posisi normal */
+}
+
+/* Link login dan register */
+.login-link,
+.register-link {
+  margin-top: 12px;
+  /* Jarak dari atas */
+  font-size: 13px;
+  /* Ukuran font kecil */
+  color: #333;
+  /* Warna teks */
+  position: relative;
+  /* Untuk z-index */
+  z-index: 11;
+  /* Layer di atas container */
+}
+
+/* Link <a> di dalam login-link dan register-link */
+.login-link a,
+.register-link a {
+  color: #5066ff;
+  /* Warna biru */
+  text-decoration: none;
+  /* Hilangkan underline */
+  font-weight: 600;
+  /* Font semi-bold */
+  position: relative;
+  /* Untuk z-index */
+  z-index: 12;
+  /* Layer paling atas */
+}
+
+/* Efek hover pada link */
+.login-link a:hover,
+.register-link a:hover {
+  text-decoration: underline;
+  /* Munculkan underline saat hover */
+}
+
+/* ========================================
+   DEKORASI - Gambar dekoratif pojok
+   ======================================== */
+.decor {
+  width: 280px;
+  /* Lebar default */
+  max-width: 40vw;
+  /* Maksimal 40% lebar viewport */
+  position: fixed;
+  /* Fixed position (tidak scroll) */
+  bottom: 10px;
+  /* 10px dari bawah */
+  right: 10px;
+  /* 10px dari kanan */
+  opacity: 0.9;
+  /* Transparansi 90% */
+  z-index: 1;
+  /* Layer paling bawah */
+  pointer-events: none;
+  /* Tidak bisa diklik (tidak ganggu interaksi) */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - FORM PAGE
+   Menyesuaikan tampilan untuk berbagai ukuran layar
+   ======================================== */
+
+/* Mobile kecil (max 480px) */
+@media (max-width: 480px) {
+  body.form-page {
+    padding: 15px;
+    /* Kurangi padding */
+  }
+
+  .form-container {
+    max-width: 280px;
+    /* Lebar lebih kecil */
+    padding: 22px 18px;
+    /* Padding lebih kecil */
+  }
+
+  .form-title {
+    font-size: 24px;
+    /* Font lebih kecil */
+  }
+
+  .input-group {
+    padding: 9px 11px;
+    /* Padding lebih kecil */
+  }
+
+  .input-group input {
+    font-size: 14px;
+    /* Font input lebih kecil */
+  }
+
+  .btn-primary {
+    padding: 10px 24px;
+    /* Padding tombol lebih kecil */
+    font-size: 15px;
+    /* Font tombol */
+  }
+
+  .decor {
+    width: 200px;
+    /* Dekorasi lebih kecil */
+    bottom: 5px;
+    /* Lebih dekat ke bawah */
+    right: 5px;
+    /* Lebih dekat ke kanan */
+  }
+}
+
+/* Layar sangat kecil (max 360px) */
+@media (max-width: 360px) {
+  .form-container {
+    max-width: 260px;
+    /* Lebar minimal */
+    padding: 18px 15px;
+    /* Padding minimal */
+  }
+
+  .form-title {
+    font-size: 22px;
+    /* Font kecil */
+  }
+
+  .input-group {
+    padding: 8px 10px;
+    /* Padding minimal */
+    margin: 10px 0;
+    /* Margin dikurangi */
+  }
+
+  .input-group input {
+    font-size: 13px;
+    /* Font sangat kecil */
+  }
+
+  .btn-primary {
+    padding: 9px 20px;
+    /* Padding minimal */
+    font-size: 14px;
+    /* Font kecil */
+  }
+
+  .login-link,
+  .register-link {
+    font-size: 12px;
+    /* Font link kecil */
+  }
+
+  .decor {
+    width: 150px;
+    /* Dekorasi kecil */
+    opacity: 0.7;
+    /* Lebih transparan */
+  }
+}
+
+/* Tablet (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .form-container {
+    max-width: 400px;
+    /* Lebar lebih besar */
+    padding: 35px 30px;
+    /* Padding lebih besar */
+  }
+
+  .decor {
+    width: 320px;
+    /* Dekorasi lebih besar */
+  }
+}
+
+/* Desktop & Laptop (769px ke atas) */
+@media (min-width: 769px) {
+  .form-container {
+    max-width: 420px;
+    /* Lebar maksimal untuk desktop */
+    padding: 40px 35px;
+    /* Padding besar */
+  }
+
+  .form-title {
+    font-size: 32px;
+    /* Font judul besar */
+  }
+
+  .input-group {
+    padding: 14px 18px;
+    /* Padding input besar */
+  }
+
+  .input-group input {
+    font-size: 16px;
+    /* Font input normal */
+  }
+
+  .btn-primary {
+    padding: 14px 35px;
+    /* Padding tombol besar */
+    font-size: 17px;
+    /* Font tombol besar */
+  }
+
+  .decor {
+    width: 350px;
+    /* Dekorasi besar */
+  }
+}
+
+/* Landscape mode (layar horizontal) */
+@media (max-height: 500px) and (orientation: landscape) {
+  body.form-page {
+    padding: 15px;
+    /* Padding kecil */
+    align-items: flex-start;
+    /* Align ke atas */
+    padding-top: 20px;
+    /* Padding atas */
+  }
+
+  .form-container {
+    max-height: 85vh;
+    /* Maksimal 85% tinggi viewport */
+    overflow-y: auto;
+    /* Scroll vertical jika konten panjang */
+    padding: 20px;
+    /* Padding sedang */
+  }
+
+  .form-title {
+    font-size: 22px;
+    /* Font kecil */
+    margin-bottom: 15px;
+    /* Margin dikurangi */
+  }
+
+  .input-group {
+    margin: 10px 0;
+    /* Margin dikurangi */
+    padding: 8px 12px;
+    /* Padding dikurangi */
+  }
+
+  .btn-primary {
+    margin-top: 10px;
+    /* Margin atas dikurangi */
+    padding: 8px 25px;
+    /* Padding dikurangi */
+  }
+
+  .decor {
+    width: 180px;
+    /* Dekorasi kecil */
+  }
+}
+
+/* Touch improvements - untuk perangkat touchscreen */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary {
+    min-height: 44px;
+    /* Minimal tinggi tombol 44px (standar Apple) */
+  }
+
+  .input-group {
+    min-height: 44px;
+    /* Minimal tinggi input 44px (mudah ditouch) */
+  }
+
+  .login-link a,
+  .register-link a {
+    padding: 5px;
+    /* Padding untuk area touch lebih besar */
+    display: inline-block;
+    /* Agar padding bekerja */
+  }
+}
+
+/* ========================================
+   TOGGLE PASSWORD ICON - Show/hide password
+   ======================================== */
+.password-wrapper {
+  position: relative;
+  /* Container relative untuk child absolut */
+}
+
+/* Wrapper untuk ikon toggle password */
+.toggle-password-wrapper {
+  position: absolute;
+  /* Posisi absolut dalam password-wrapper */
+  right: 10px;
+  /* 10px dari kanan */
+  top: 0;
+  /* Dari atas */
+  width: 45px;
+  /* Lebar area klik */
+  height: 100%;
+  /* Tinggi penuh parent */
+  display: flex;
+  /* Flexbox untuk centering */
+  align-items: center;
+  /* Vertical center */
+  justify-content: center;
+  /* Horizontal center */
+  cursor: pointer;
+  /* Kursor pointer */
+  z-index: 9999;
+  /* Layer paling atas */
+  background: transparent;
+  /* Background transparan */
+}
+
+/* Ikon toggle password */
+.toggle-password {
+  width: 17px;
+  /* Lebar ikon */
+  height: 17px;
+  /* Tinggi ikon */
+  pointer-events: none;
+  /* Tidak bisa diklik (parent yang handle klik) */
+}
+
+/* ========================================
+   HOME PAGE - Halaman utama aplikasi
+   ======================================== */
+body.home-page {
+  background: linear-gradient(#cfd8ff, #ffffff);
+  /* Gradasi biru ke putih */
+  padding: 16px;
+  /* Padding sekeliling */
+  max-width: 400px;
+  /* Maksimal lebar 400px */
+  margin: 0 auto;
+  /* Center horizontal */
+  min-height: 100vh;
+  /* Minimal tinggi full screen */
+}
+
+/* Judul "Today" */
+.today-title {
+  font-size: 35px;
+  /* Font besar */
+  font-weight: 700;
+  /* Bold */
+  margin-bottom: 15px;
+  /* Jarak ke bawah */
+  color: #ffffff;
+  /* Warna putih */
+  text-align: left;
+  /* Rata kiri */
+}
+
+/* Ikon di sebelah judul */
+.title-icon {
+  width: 36px;
+  /* Lebar ikon */
+  height: 32px;
+  /* Tinggi ikon */
+  vertical-align: middle;
+  /* Align tengah dengan teks */
+  margin-left: 1px;
+  /* Jarak dari teks */
+}
+
+/* ========================================
+   DATE CARD - Card untuk input tanggal
+   ======================================== */
+.date-card label {
+  font-weight: 600;
+  /* Font semi-bold */
+  font-size: 14px;
+  /* Ukuran font */
+  color: #ffffff;
+  /* Warna putih */
+  display: block;
+  /* Display block (full width) */
+  margin-bottom: 6px;
+  /* Jarak ke bawah */
+}
+
+/* Wrapper untuk input date dan ikon */
+.date-wrapper {
+  display: flex;
+  /* Flexbox layout */
+  align-items: center;
+  /* Align vertical center */
+  margin-top: 6px;
+  /* Jarak dari atas */
+  gap: 8px;
+  /* Jarak antar elemen 8px */
+}
+
+/* Input date */
+.date-wrapper input[type="date"] {
+  flex: 1;
+  /* Ambil sisa space */
+  padding: 8px 12px;
+  /* Padding dalam input */
+  border: 3px solid #624bae;
+  /* Border ungu 3px */
+  border-radius: 2px;
+  /* Sudut sedikit melengkung */
+  font-size: 14px;
+  /* Ukuran font */
+  background: transparent;
+  /* Background transparan */
+  color: #000000;
+  /* Warna teks hitam */
+}
+
+/* Calendar picker indicator di input date */
+.date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  /* Kursor pointer saat hover */
+}
+
+/* Ikon kalender menggunakan SVG inline */
+.date-wrapper .icon-calendar {
+  width: 24px;
+  /* Lebar ikon */
+  height: 24px;
+  /* Tinggi ikon */
+  flex-shrink: 0;
+  /* Jangan shrink */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235e35b1"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>') no-repeat center;
+  /* SVG kalender sebagai background */
+  background-size: contain;
+  /* Ukuran SVG fit dalam container */
+}
+
+/* Small text di bawah date card */
+.date-card small {
+  color: #888;
+  /* Warna abu-abu */
+  margin-top: 4px;
+  /* Jarak dari atas */
+  display: block;
+  /* Display block */
+  font-size: 12px;
+  /* Font kecil */
+  font-style: italic;
+  /* Teks miring */
+}
+
+/* ========================================
+   MEDICATION CARD - Card untuk obat
+   ======================================== */
+.med-card {
+  background-color: #adbae3;
+  /* Background biru muda */
+  border-radius: 16px;
+  /* Sudut melengkung */
+  padding: 16px;
+  /* Padding dalam */
+  margin-bottom: 20px;
+  /* Jarak ke card berikutnya */
+  color: #1c1c1c;
+  /* Warna teks gelap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  /* Bayangan */
+  position: relative;
+  /* Untuk child absolut */
+}
+
+/* Ikon obat */
+.med-icon {
+  width: 35px;
+  /* Lebar ikon */
+  height: 35px;
+  /* Tinggi ikon */
+  vertical-align: middle;
+  /* Align tengah dengan teks */
+  margin-right: 6px;
+  /* Jarak ke teks */
+}
+
+/* Ikon bell (notifikasi) di pojok kanan atas */
+.med-card .bell-icon {
+  position: absolute;
+  /* Posisi absolut dalam med-card */
+  top: 12px;
+  /* 12px dari atas */
+  right: 16px;
+  /* 16px dari kanan */
+  width: 20px;
+  /* Lebar ikon */
+  height: 20px;
+  /* Tinggi ikon */
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235e35b1"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>') no-repeat center;
+  /* SVG bell sebagai background */
+  background-size: contain;
+  /* Ukuran fit */
+}
+
+/* Header card obat (nama obat) */
+.med-card .med-header p {
+  font-size: 18px;
+  /* Font besar */
+  font-weight: 600;
+  /* Semi-bold */
+  margin-bottom: 10px;
+  /* Jarak ke bawah */
+  color: #000000;
+  /* Warna hitam */
+}
+
+/* Body card obat (detail obat) */
+.med-card .med-body p {
+  margin-top: 12px;
+  /* Jarak dari atas */
+  font-weight: 500;
+  /* Font medium */
+  font-size: 14px;
+  /* Ukuran font */
+}
+
+/* Group untuk option buttons (Before/After Meal, dll) */
+.option-group {
+  display: flex;
+  /* Flexbox layout */
+  gap: 8px;
+  /* Jarak antar button 8px */
+  margin-top: 6px;
+  /* Jarak dari atas */
+  flex-wrap: wrap;
+  /* Wrap ke baris baru jika tidak muat */
+  align-items: center;
+  /* Align vertical center */
+}
+
+/* Button option individual */
+.option-group .option {
+  padding: 4px 10px;
+  /* Padding dalam button */
+  border: none;
+  /* Hilangkan border */
+  border-radius: 16px;
+  /* Sudut melengkung (pill shape) */
+  background-color: #5b2bae;
+  /* Background ungu */
+  color: #ffffff;
+  /* Teks putih */
+  cursor: pointer;
+  /* Kursor pointer */
+  font-size: 12px;
+  /* Font kecil */
+  font-weight: 500;
+  /* Font medium */
+}
+
+/* ==============================================
+   OPTION ACTIVE - Button option yang lagi dipilih
+   Class ini dipake di HTML: <button class="option active">
+   ============================================== */
+/* Option yang lagi aktif/dipilih */
+.option-group .option.active {
+  background-color: #8a8fe0;
+  /* Warna ungu muda (beda dari option biasa yang #5b2bae) */
+  /* Warna beda pas aktif */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Bayangan hitam 20% biar keliatan "terangkat" */
+}
+
+/* ==============================================
+   SCHEDULE & TIME ITEM - Item jadwal & waktu obat
+   Class ini dipake di HTML untuk wrapper jadwal/waktu
+   ============================================== */
+/* Item schedule & time */
+.schedule-item, .time-item {
+  margin-top: 6px;
+  /* Jarak dari elemen di atasnya */
+}
+
+/* ==============================================
+   FORM INPUT GENERIC - Input form yang dipake di banyak tempat
+   Class ini dipake di HTML: <input class="form-input">
+   ============================================== */
+/* Input form generic */
+.form-input {
+  width: 100%;
+  /* Lebar penuh dari parent/container */
+  padding: 6px 10px;
+  /* Padding dalam: 6px atas-bawah, 10px kiri-kanan */
+  border-radius: 12px;
+  /* Sudut melengkung besar (bentuk pill) */
+  border: 1px solid #aaa;
+  /* Border abu-abu tipis 1px */
+  outline: none;
+  /* Hilangkan outline biru default browser pas focus */
+  font-size: 14px;
+  /* Ukuran font */
+  background: #f9f9f9;
+  /* Background abu sangat muda */
+}
+
+/* ==============================================
+   SMALL BUTTON - Button kecil untuk aksi tambahan
+   Class ini dipake di HTML: <button class="small-btn">
+   ============================================== */
+/* Button kecil */
+.small-btn {
+  margin-top: 8px;
+  /* Jarak dari elemen atas */
+  padding: 6px 10px;
+  /* Padding kecil */
+  font-size: 14px;
+  /* Font kecil */
+  background-color: #7e57c2;
+  /* Background ungu */
+  color: #fff;
+  /* Teks putih */
+  border: none;
+  /* Hilangkan border default */
+  border-radius: 12px;
+  /* Sudut melengkung */
+  cursor: pointer;
+  /* Kursor jadi tangan pas hover */
+  display: block;
+  /* Display block (ambil baris sendiri) */
+  width: auto;
+  /* Lebar otomatis sesuai konten */
+}
+
+/* ==============================================
+   ADD MEDICATION SECTION - Section buat tambah obat baru
+   Bagian ini ada di halaman Home untuk input obat baru
+   Class ini dipake di HTML: <div class="add-med-section">
+   ============================================== */
+.add-med-section {
+  background-color: #dedcdc;
+  /* Background abu muda */
+  border: 1px solid #ddd;
+  /* Border abu lebih muda */
+  border-radius: 12px;
+  /* Sudut melengkung */
+  padding: 12px 16px;
+  /* Padding: 12px atas-bawah, 16px kiri-kanan */
+  margin-bottom: 80px;
+  /* Jarak bawah BESAR (80px) biar ga ketutup bottom navigation */
+  /* Jarak bawah banyak (buat bottom nav) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Bayangan lembut hitam 10% */
+}
+
+/* Judul section "Add New Medication" */
+.add-med-section p {
+  font-weight: 600;
+  /* Font semi-bold */
+  margin-bottom: 8px;
+  /* Jarak ke bawah */
+  color: #000000;
+  /* Warna hitam */
+  font-size: 16px;
+  /* Font agak besar */
+}
+
+/* ==============================================
+   ADD MED INPUT GROUP - Container input + button tambah obat
+   Ini pakai Flexbox biar input & button sejajar horizontal
+   ============================================== */
+/* Input group tambah obat */
+.add-med-input-group {
+  display: flex;
+  /* Flexbox: elemen sejajar horizontal */
+  gap: 8px;
+  /* Jarak antar elemen (input & button) 8px */
+  align-items: center;
+  /* Align vertikal tengah */
+}
+
+/* ==============================================
+   MED INPUT - Input untuk nama obat
+   Class ini dipake di HTML: <input class="med-input">
+   ============================================== */
+/* Input nama obat */
+.med-input {
+  flex: 1;
+  /* Ambil semua sisa space yang ada (button ambil space sesuai konten) */
+  padding: 8px 12px;
+  /* Padding dalam */
+  border-radius: 12px;
+  /* Sudut melengkung */
+  border: 1px solid #aaa;
+  /* Border abu-abu */
+  font-size: 14px;
+  /* Ukuran font */
+  background: #f9f9f9;
+  /* Background abu muda */
+}
+
+/* ==============================================
+   ADD MED BUTTON - Button "Add" untuk tambah obat
+   Class ini dipake di HTML: <button class="add-med-btn">
+   ============================================== */
+/* Button tambah obat */
+.add-med-btn {
+  padding: 8px 12px;
+  /* Padding kecil */
+  border-radius: 12px;
+  /* Sudut melengkung */
+  border: none;
+  /* Hilangkan border */
+  background-color: #7e57c2;
+  /* Background ungu */
+  color: #fff;
+  /* Teks putih */
+  cursor: pointer;
+  /* Kursor pointer */
+  font-size: 14px;
+  /* Ukuran font */
+  font-weight: 500;
+  /* Font medium */
+  white-space: nowrap;
+  /* Teks GA wrap/turun ke baris baru (tetap 1 baris) */
+  /* Teks ga wrap ke baris baru */
+}
+
+/* ==============================================
+   MEDICATION LIST - Daftar obat yang sudah ditambahkan
+   Dipake untuk menampilkan list obat dalam bentuk <ul><li>
+   Class ini dipake di HTML: <ul class="med-list">
+   ============================================== */
+.med-list {
+  list-style: none;
+  /* Hilangkan bullet point default <li> */
+  /* Hilangkan bullet point */
+  margin-top: 12px;
+  /* Jarak dari elemen atas */
+}
+
+/* Setiap item obat dalam list */
+.med-list li {
+  background-color: #d1c4e9;
+  /* Background ungu muda */
+  padding: 8px 12px;
+  /* Padding dalam */
+  border-radius: 12px;
+  /* Sudut melengkung (bentuk pill) */
+  margin-bottom: 4px;
+  /* Jarak antar item 4px */
+  font-size: 14px;
+  /* Ukuran font */
+  color: #311b92;
+  /* Warna ungu gelap */
+}
+
+/* ==============================================
+   SCHEDULE PAGE - Halaman kalender jadwal obat
+   Halaman ini menampilkan kalender untuk lihat & manage jadwal
+   Class ini dipake di HTML <body>: <body class="schedule-page">
+   ============================================== */
+.schedule-page {
+  max-width: 400px;
+  /* Maksimal lebar 400px (biar ga terlalu lebar di desktop) */
+  margin: 0 auto;
+  /* Center horizontal (margin kiri-kanan auto) */
+  background: linear-gradient(#cfd8ff, #ffffff);
+  /* Gradasi biru ke putih dari atas ke bawah */
+  min-height: 100vh;
+  /* Minimal tinggi = full screen */
+  position: relative;
+  /* Buat child bisa pake position absolute */
+  padding-bottom: 80px;
+  /* Padding bawah banyak biar ga ketutup bottom nav */
+  /* Buat bottom nav */
+}
+
+/* ==============================================
+   HEADER - Header halaman dengan icon & judul
+   Class ini dipake di HTML: <div class="header">
+   ============================================== */
+/* Header halaman */
+.header {
+  display: flex;
+  /* Flexbox buat atur layout */
+  align-items: center;
+  /* Align vertikal tengah */
+  justify-content: center;
+  /* Align horizontal tengah */
+  gap: 10px;
+  /* Jarak antar elemen (icon & teks) 10px */
+  text-align: center;
+  /* Teks rata tengah */
+  padding: 25px 20px 15px;
+  /* Padding: 25px atas, 20px kiri-kanan, 15px bawah */
+}
+
+/* Icon/gambar di header */
+.header-img {
+  width: 45px;
+  /* Lebar icon */
+  height: 45px;
+  /* Tinggi icon */
+}
+
+/* Judul halaman (h1) */
+.header h1 {
+  font-size: 22px;
+  /* Font besar */
+  font-weight: 700;
+  /* Bold */
+  color: #ffffff;
+  /* Warna putih */
+}
+
+/* ==============================================
+   SUBTITLE - Subtitle di bawah judul
+   Class ini dipake di HTML: <p class="subtitle">
+   ============================================== */
+/* Subtitle */
+.subtitle {
+  font-size: 14px;
+  /* Font kecil */
+  color: #000;
+  /* Warna hitam */
+  margin-top: 5px;
+  /* Jarak dari judul */
+  text-align: center;
+  /* Rata tengah */
+}
+
+/* ==============================================
+   CALENDAR CARD - Card container kalender
+   Card ini berisi seluruh kalender (navigasi bulan + grid tanggal)
+   Class ini dipake di HTML: <div class="calendar-card">
+   ============================================== */
+/* Card kalender */
+.calendar-card {
+  background: rgb(236, 227, 239);
+  /* Background ungu sangat muda */
+  border-radius: 16px;
+  /* Sudut melengkung besar */
+  padding: 20px;
+  /* Padding dalam card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Bayangan lembut */
+  margin: 0 15px 25px;
+  /* Margin: 0 atas, 15px kiri-kanan, 25px bawah */
+  position: relative;
+  /* Buat child bisa pake absolute */
+}
+
+/* ==============================================
+   MONTH NAVIGATION - Navigasi prev/next month
+   Bagian ini berisi tombol "<" dan ">" untuk ganti bulan
+   Class ini dipake di HTML: <div class="month-nav">
+   ============================================== */
+.month-nav {
+  display: flex;
+  /* Flexbox layout */
+  justify-content: space-between;
+  /* Space antar elemen (button kiri & kanan berjauhan) */
+  align-items: center;
+  /* Align vertikal tengah */
+  margin-bottom: 15px;
+  /* Jarak ke elemen bawah */
+}
+
+/* ==============================================
+   NAV BUTTON - Button prev/next (< dan >)
+   Class ini dipake di HTML: <button class="nav-btn">
+   ============================================== */
+/* Button prev/next month */
+.nav-btn {
+  background: none;
+  /* Ga ada background (transparan) */
+  border: none;
+  /* Hilangkan border */
+  font-size: 22px;
+  /* Font besar buat icon/arrow */
+  color: #000;
+  /* Warna hitam */
+  cursor: pointer;
+  /* Kursor jadi tangan */
+  transition: 0.3s;
+  /* Animasi smooth 0.3 detik */
+  padding: 5px 10px;
+  /* Padding kecil biar area klik lebih besar */
+}
+
+/* Efek hover button navigasi */
+.nav-btn:hover {
+  color: #694a9c;
+  /* Warna berubah jadi ungu */
+  background-color: rgba(105, 74, 156, 0.1);
+  /* Background ungu 10% transparan */
+  border-radius: 50%;
+  /* Bentuk bulat */
+}
+
+/* ==============================================
+   MONTH YEAR - Tampilan "December 2024"
+   Class ini dipake di HTML: <div class="month-year">
+   ============================================== */
+/* Tampilan bulan-tahun */
+.month-year {
+  display: flex;
+  /* Flexbox biar bisa dikasih separator di tengah */
+  align-items: center;
+  /* Align vertikal tengah */
+  font-size: 18px;
+  /* Font agak besar */
+  font-weight: 600;
+  /* Semi-bold */
+  color: #000;
+  /* Warna hitam */
+}
+
+/* Separator antara bulan & tahun (garis "|" atau "-") */
+.separator {
+  margin: 0 5px;
+  /* Margin kiri-kanan 5px (kasih jarak ke teks) */
+  color: #0b0b0b;
+  /* Warna hitam */
+}
+
+/* ==============================================
+   WEEK DAYS - Hari dalam seminggu (S M T W T F S)
+   Bagian ini tampilkan singkatan hari: Sun, Mon, Tue, dst
+   Pakai CSS Grid dengan 7 kolom (1 minggu = 7 hari)
+   Class ini dipake di HTML: <div class="week-days">
+   ============================================== */
+
+/* Week Days */
+.week-days {
+  display: grid;
+  /* Pakai CSS Grid layout */
+  grid-template-columns: repeat(7, 1fr);
+  /* 7 kolom dengan lebar sama (1fr = 1 fraction/bagian) */
+  text-align: center;
+  /* Teks rata tengah */
+  margin-bottom: 10px;
+  /* Jarak ke calendar grid */
+  padding-bottom: 5px;
+  /* Padding bawah */
+}
+
+/* Setiap hari (S, M, T, W, T, F, S) */
+.day {
+  font-weight: 600;
+  /* Font semi-bold */
+  color: #000;
+  /* Warna hitam */
+  font-size: 14px;
+  /* Ukuran font */
+}
+
+/* ==============================================
+   CALENDAR GRID - Grid tanggal kalender
+   Grid ini berisi 35-42 kotak tanggal (5-6 minggu)
+   Pakai CSS Grid 7 kolom (7 hari per minggu)
+   Class ini dipake di HTML: <div class="calendar-grid">
+   ============================================== */
+/* Calendar Grid */
+.calendar-grid {
+  display: grid;
+  /* CSS Grid layout */
+  grid-template-columns: repeat(7, 1fr);
+  /* 7 kolom sama lebar */
+  gap: 8px;
+  /* Jarak antar kotak tanggal 8px */
+  text-align: center;
+  /* Teks rata tengah */
+}
+
+/* ==============================================
+   DATE - Setiap kotak tanggal di kalender
+   Class ini dipake di HTML: <div class="date">1</div>
+   Bisa dikombinasi dengan class lain:
+   - date other-month (tanggal bulan lain)
+   - date today (tanggal hari ini)
+   - date has-schedule (tanggal ada jadwal obat)
+   ============================================== */
+.date {
+  width: 40px;
+  /* Lebar kotak */
+  height: 40px;
+  /* Tinggi kotak (sama = kotak persegi) */
+  border-radius: 50%;
+  /* 50% = bentuk bulat sempurna */
+  display: flex;
+  /* Flexbox buat centering angka */
+  align-items: center;
+  /* Center vertikal */
+  justify-content: center;
+  /* Center horizontal */
+  cursor: pointer;
+  /* Kursor jadi tangan (bisa diklik) */
+  transition: 0.2s;
+  /* Animasi smooth 0.2 detik */
+  margin: 0 auto;
+  /* Center horizontal dalam grid cell */
+  font-size: 14px;
+  /* Ukuran font angka */
+  color: #000;
+  /* Warna hitam */
+}
+
+/* Efek hover tanggal */
+.date:hover {
+  background-color: #e0e0e0;
+  /* Background abu-abu muda pas di-hover */
+}
+
+/* Tanggal dari bulan lain (bulan sebelum/sesudah) */
+.date.other-month {
+  color: #adadad;
+  /* Warna abu muda/pudar (biar keliatan beda) */
+}
+
+/* Tanggal yang ada jadwal obat */
+.date.has-schedule {
+  background-color: #7e57c2 !important;
+  /* Background ungu (!important = override semua termasuk hover) */
+  color: #fff !important;
+  /* Teks putih */
+  font-weight: 600;
+  /* Font semi-bold */
+}
+
+/* Tanggal hari ini (today) */
+.date.today {
+  border: 2px solid #694a9c;
+  /* Border ungu tebal 2px */
+}
+
+/* ==============================================
+   CONFIRM BUTTONS - Tombol Cancel & OK
+   Tombol ini biasanya ada di modal/dialog konfirmasi
+   Class ini dipake di HTML: <div class="confirm-buttons">
+   ============================================== */
+/* Confirm Buttons */
+.confirm-buttons {
+  display: flex;
+  /* Flexbox layout */
+  justify-content: flex-end;
+  /* Align ke kanan (button di kanan) */
+  gap: 10px;
+  /* Jarak antar button 10px */
+  margin-top: 20px;
+  /* Jarak dari konten atas */
+}
+
+/* Button Cancel & OK */
+.cancel-btn,
+.ok-btn {
+  border: none;
+  /* Hilangkan border */
+  padding: 8px 16px;
+  /* Padding: 8px atas-bawah, 16px kiri-kanan */
+  border-radius: 10px;
+  /* Sudut melengkung */
+  font-weight: bold;
+  /* Font tebal */
+  cursor: pointer;
+  /* Kursor pointer */
+  transition: 0.3s;
+  /* Animasi smooth */
+  background-color: rgb(237, 227, 239);
+  /* Background ungu muda */
+  color: #9760ef;
+  /* Teks ungu */
+}
+
+/* Hover button cancel (jadi merah) */
+.cancel-btn:hover {
+  background-color: #eb8585;
+  /* Background merah muda */
+}
+
+/* Hover button OK (jadi hijau) */
+.ok-btn:hover {
+  background-color: #8dc89f;
+  /* Background hijau muda */
+}
+
+/* ==============================================
+   PROFILE PAGE - Halaman profil user
+   Halaman ini menampilkan info user & menu pengaturan
+   Class ini dipake di HTML <body>: <body class="profile-page">
+   ============================================== */
+/* PROFILE PAGE */
+.profile-page {
+  max-width: 400px;
+  /* Maksimal lebar 400px */
+  margin: 0 auto;
+  /* Center horizontal */
+  background: linear-gradient(#cbb8ff, #dbe8ff);
+  /* Gradasi ungu ke biru muda */
+  min-height: 100vh;
+  /* Minimal tinggi full screen */
+  position: relative;
+  /* Buat child absolut */
+  padding: 25px 20px 80px;
+  /* Padding: 25px atas, 20px kiri-kanan, 80px bawah (buat bottom nav) */
+}
+
+/* ==============================================
+   PROFILE CARD - Card info profil user
+   Card ini berisi foto, nama, email, nomor HP
+   Class ini dipake di HTML: <div class="profile-card">
+   ============================================== */
+.profile-card {
+  background-color: #e7cff8;
+  /* Background ungu muda */
+  border-radius: 15px;
+  /* Sudut melengkung */
+  padding: 20px;
+  /* Padding dalam card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Bayangan lembut */
+  position: relative;
+  /* Buat button edit bisa pake absolute */
+  margin-bottom: 25px;
+  /* Jarak ke section menu */
+}
+
+/* Heading "My Profile" */
+.profile-card h2 {
+  font-size: 18px;
+  /* Font agak besar */
+  font-weight: 700;
+  /* Bold */
+  color: #000;
+  /* Warna hitam */
+  margin-bottom: 10px;
+  /* Jarak ke konten */
+}
+
+/* ==============================================
+   PROFILE CONTENT - Container foto + teks profil
+   Pakai Flexbox biar foto & teks sejajar horizontal
+   Class ini dipake di HTML: <div class="profile-content">
+   ============================================== */
+.profile-content {
+  display: flex;
+  /* Flexbox: foto & teks sejajar */
+  align-items: center;
+  /* Align vertikal tengah */
+  gap: 12px;
+  /* Jarak antara foto & teks 12px */
+}
+
+/* ==============================================
+   PROFILE IMG - Foto profil user
+   Class ini dipake di HTML: <img class="profile-img">
+   ============================================== */
+.profile-img {
+  width: 60px;
+  /* Lebar foto */
+  height: 60px;
+  /* Tinggi foto (sama = persegi) */
+  border-radius: 50%;
+  /* 50% = bentuk bulat sempurna */
+  object-fit: cover;
+  /* Gambar ga gepeng, di-crop sesuai container */
+  background-color: #f2f2f2;
+  /* Background abu muda (kalau ga ada foto) */
+}
+
+/* Container teks profil */
+.profile-text {
+  flex: 1;
+  /* Ambil sisa space yang ada */
+}
+
+/* ==============================================
+   NAME - Nama user
+   Class ini dipake di HTML: <p class="name">
+   ============================================== */
+.name {
+  font-size: 16px;
+  /* Font agak besar */
+  font-weight: 700;
+  /* Bold */
+  color: #000;
+  /* Warna hitam */
+}
+
+/* Email & nomor telepon */
+.email,
+.phone {
+  font-size: 14px;
+  /* Font kecil */
+  color: #333;
+  /* Warna abu gelap */
+  margin-top: 2px;
+  /* Jarak kecil dari elemen atas */
+}
+
+/* ==============================================
+   EDIT BUTTON - Button "Edit" di pojok kanan bawah card
+   Pakai position absolute biar bisa ditaro di pojok
+   Class ini dipake di HTML: <button class="edit-btn">
+   ============================================== */
+.edit-btn {
+  position: absolute;
+  /* Posisi absolute dalam profile-card */
+  bottom: 15px;
+  /* 15px dari bawah card */
+  right: 20px;
+  /* 20px dari kanan card */
+  border: none;
+  /* Hilangkan border */
+  background: none;
+  /* Background transparan */
+  color: #b98ef9;
+  /* Warna ungu */
+  font-weight: 600;
+  /* Semi-bold */
+  cursor: pointer;
+  /* Kursor pointer */
+}
+
+/* ==============================================
+   MENU SECTION - Section menu pengaturan
+   Section ini berisi menu: About, Terms, Logout, dll
+   Class ini dipake di HTML: <div class="menu-section">
+   ============================================== */
+.menu-section {
+  background: transparent;
+  /* Background transparan */
+}
+
+/* ==============================================
+   MENU ITEM - Setiap item menu
+   Class ini dipake di HTML: <div class="menu-item">
+   Bisa dikombinasi: <div class="menu-item logout"> untuk menu logout
+   ============================================== */
+.menu-item {
+  display: flex;
+  /* Flexbox biar teks & arrow sejajar */
+  justify-content: space-between;
+  /* Teks di kiri, arrow di kanan */
+  align-items: center;
+  /* Align vertikal tengah */
+  padding: 14px 5px;
+  /* Padding: 14px atas-bawah, 5px kiri-kanan */
+  border-bottom: 1px solid #000;
+  /* Garis bawah hitam 1px (separator antar menu) */
+  font-size: 15px;
+  /* Ukuran font */
+  color: #000;
+  /* Warna hitam */
+  cursor: pointer;
+  /* Kursor pointer (bisa diklik) */
+  transition: background 0.2s;
+  /* Animasi background */
+}
+
+/* Hover menu item */
+.menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  /* Background putih 40% transparan */
+}
+
+/* Menu item logout (warna merah) */
+.menu-item.logout {
+  color: #b94b4b;
+  /* Warna merah */
+  font-weight: 600;
+  /* Semi-bold */
+}
+
+/* ==============================================
+   ARROW - Icon arrow ">" di kanan menu
+   Class ini dipake di HTML: <span class="arrow">›</span>
+   ============================================== */
+.arrow {
+  font-size: 18px;
+  /* Font besar buat icon arrow */
+}
+
+/* ==============================================
+   TERMS PAGE - Halaman syarat & ketentuan
+   Halaman ini menampilkan Terms of Service aplikasi
+   Class ini dipake di HTML <body>: <body class="terms-page">
+   ============================================== */
+/* TERMS PAGE */
+.terms-page {
+  max-width: 600px;
+  /* Maksimal lebar 600px (lebih lebar dari page lain karena banyak teks) */
+  margin: 0 auto;
+  /* Center horizontal */
+  background: linear-gradient(#cfd8ff, #ffffff);
+  /* Gradasi biru ke putih */
+  min-height: 100vh;
+  /* Minimal full screen */
+  padding: 20px 20px 100px;
+  /* Padding: 20px atas, 20px kiri-kanan, 100px bawah */
+  font-family: "Poppins", sans-serif;
+  /* Font Poppins */
+}
+
+/* ==============================================
+   TERMS HEADER - Header halaman terms
+   Class ini dipake di HTML: <div class="terms-header">
+   ============================================== */
+.terms-header {
+  text-align: center;
+  /* Rata tengah */
+  padding: 20px 0;
+  /* Padding atas-bawah 20px */
+  margin-bottom: 20px;
+  /* Jarak ke konten */
+}
+
+/* Judul "Terms & Conditions" */
+.terms-header h1 {
+  font-size: 24px;
+  /* Font besar */
+  font-weight: 700;
+  /* Bold */
+  color: #5e35b1;
+  /* Warna ungu */
+  margin-bottom: 5px;
+  /* Jarak ke subtitle */
+}
+
+/* Subtitle header */
+.terms-header .subtitle {
+  font-size: 12px;
+  /* Font kecil */
+  color: #666;
+  /* Warna abu */
+  font-style: italic;
+  /* Teks miring */
+}
+
+/* ==============================================
+   TERMS CONTENT - Container konten terms
+   Ini card putih yang berisi semua teks terms
+   Class ini dipake di HTML: <div class="terms-content">
+   ============================================== */
+.terms-content {
+  background: white;
+  /* Background putih biar kontras sama page */
+  border-radius: 16px;
+  /* Sudut melengkung */
+  padding: 25px;
+  /* Padding dalam card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Bayangan lembut */
+  margin-bottom: 20px;
+  /* Jarak ke elemen bawah */
+}
+
+/* ==============================================
+   TERMS SECTION - Setiap section dalam terms
+   Contoh: "1. Introduction", "2. Privacy Policy", dll
+   Class ini dipake di HTML: <div class="terms-section">
+   ============================================== */
+.terms-section {
+  margin-bottom: 25px;
+  /* Jarak antar section */
+}
+
+/* Heading section (h2) */
+.terms-section h2 {
+  font-size: 18px;
+  /* Font besar */
+  font-weight: 600;
+  /* Semi-bold */
+  color: #5e35b1;
+  /* Warna ungu */
+  margin-bottom: 12px;
+  /* Jarak ke konten */
+  padding-bottom: 8px;
+  /* Padding bawah (biar garis ga terlalu deket) */
+  border-bottom: 2px solid #e0d7f5;
+  /* Garis bawah ungu muda 2px */
+}
+
+/* Sub-heading (h3) */
+.terms-section h3 {
+  font-size: 16px;
+  /* Font sedang */
+  font-weight: 600;
+  /* Semi-bold */
+  color: #7e57c2;
+  /* Warna ungu lebih muda */
+  margin-top: 15px;
+  /* Jarak dari elemen atas */
+  margin-bottom: 8px;
+  /* Jarak ke konten */
+}
+
+/* Paragraf dalam terms */
+.terms-section p {
+  font-size: 14px;
+  /* Font kecil */
+  line-height: 1.6;
+  /* Jarak antar baris 1.6x (enak dibaca) */
+  color: #333;
+  /* Warna abu gelap */
+  margin-bottom: 10px;
+  /* Jarak antar paragraf */
+  text-align: justify;
+  /* Rata kiri-kanan (justify) */
+}
+
+/* List <ul> */
+.terms-section ul {
+  margin-left: 20px;
+  /* Indent 20px (geser ke kanan) */
+  margin-bottom: 10px;
+  /* Jarak ke elemen bawah */
+}
+
+/* List item <li> */
+.terms-section li {
+  font-size: 14px;
+  /* Font kecil */
+  line-height: 1.6;
+  /* Jarak antar baris */
+  color: #333;
+  /* Warna abu gelap */
+  margin-bottom: 8px;
+  /* Jarak antar item list */
+}
+
+.menu-item {
+  text-decoration: none;
+  /* Hilangkan garis bawah link */
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  /* Teks di kiri, arrow di kanan */
+}
+
+/* ========================================
+   KOMPONEN CATATAN PENTING
+   ======================================== */
+
+/* Class untuk kotak peringatan/catatan penting
+   Biasanya digunakan di HTML: <div class="important-note">
+   Fungsi: Menampilkan notifikasi atau pesan penting dengan warna kuning */
+.important-note {
+  background: #fff3cd;
+  /* Warna background kuning muda */
+  border-left: 4px solid #ff9800;
+  /* Garis tepi kiri berwarna oranye tebal 4px */
+  padding: 15px;
+  /* Jarak dalam dari konten ke tepi kotak */
+  border-radius: 8px;
+  /* Membuat sudut kotak melengkung 8px */
+  margin: 15px 0;
+  /* Jarak atas-bawah 15px, kiri-kanan 0 */
+}
+
+/* Styling untuk paragraf di dalam kotak catatan penting
+   Target: Semua <p> yang ada di dalam .important-note */
+.important-note p {
+  margin: 0;
+  /* Menghilangkan jarak default paragraf */
+  color: #856404;
+  /* Warna teks coklat gelap */
+  font-weight: 500;
+  /* Ketebalan font sedang (agak tebal) */
+}
+
+/* ========================================
+   KOMPONEN SECTION ACCEPT/TERIMA
+   ======================================== */
+
+/* Container untuk bagian persetujuan/accept
+   Biasanya ada di form atau halaman syarat & ketentuan
+   Target HTML: <div class="accept-section"> */
+.accept-section {
+  background: #e8dff5;
+  /* Background ungu muda/lavender */
+  border-radius: 12px;
+  /* Sudut melengkung 12px */
+  padding: 20px;
+  /* Jarak dalam 20px semua sisi */
+  text-align: center;
+  /* Semua teks di tengah */
+  margin-top: 20px;
+  /* Jarak atas 20px */
+}
+
+/* Paragraf di dalam section accept */
+.accept-section p {
+  font-size: 14px;
+  /* Ukuran font 14px */
+  color: #333;
+  /* Warna teks abu gelap */
+  margin-bottom: 15px;
+  /* Jarak bawah 15px */
+}
+
+/* Tombol Accept/Terima
+   Target HTML: <button class="btn-accept"> */
+.btn-accept {
+  background: linear-gradient(135deg, #7e57c2 0%, #5e35b1 100%);
+  /* Gradien ungu dari kiri atas ke kanan bawah */
+  color: white;
+  /* Warna teks putih */
+  border: none;
+  /* Hilangkan border default */
+  padding: 12px 40px;
+  /* Jarak dalam: 12px atas-bawah, 40px kiri-kanan */
+  border-radius: 10px;
+  /* Sudut melengkung 10px */
+  font-size: 16px;
+  /* Ukuran font 16px */
+  font-weight: 600;
+  /* Font semi-bold */
+  cursor: pointer;
+  /* Kursor berubah jadi pointer saat hover */
+  box-shadow: 0 4px 12px rgba(126, 87, 194, 0.3);
+  /* Bayangan blur 12px dengan opacity 30% */
+  transition: all 0.3s ease;
+  /* Animasi smooth 0.3 detik untuk semua properti */
+}
+
+/* Efek hover untuk tombol accept
+   Aktif saat kursor berada di atas tombol */
+.btn-accept:hover {
+  transform: translateY(-2px);
+  /* Tombol naik 2px ke atas */
+  box-shadow: 0 6px 16px rgba(126, 87, 194, 0.4);
+  /* Bayangan lebih besar dan lebih gelap */
+}
+
+/* ========================================
+   TOMBOL KEMBALI/BACK
+   ======================================== */
+
+/* Tombol back/kembali biasanya pakai <a> tag
+   Target HTML: <a href="#" class="back-btn">
+   Fungsi: Navigasi kembali ke halaman sebelumnya */
+.back-btn {
+  display: inline-flex;
+  /* Display flex tapi inline (tidak full width) */
+  align-items: center;
+  /* Konten vertikal di tengah */
+  gap: 8px;
+  /* Jarak antar elemen di dalam (icon & text) 8px */
+  color: #7e57c2;
+  /* Warna teks ungu */
+  text-decoration: none;
+  /* Hilangkan garis bawah link */
+  font-weight: 600;
+  /* Font semi-bold */
+  margin-bottom: 15px;
+  /* Jarak bawah 15px */
+  padding: 8px 12px;
+  /* Jarak dalam: 8px atas-bawah, 12px kiri-kanan */
+  border-radius: 8px;
+  /* Sudut melengkung 8px */
+  transition: all 0.3s ease;
+  /* Animasi smooth 0.3 detik */
+}
+
+/* Efek hover tombol back */
+.back-btn:hover {
+  background: rgba(126, 87, 194, 0.1);
+  /* Background ungu transparan 10% saat hover */
+}
+
+/* ========================================
+   HALAMAN EDIT PROFILE
+   ======================================== */
+
+/* Wrapper/container utama halaman edit profile
+   Target HTML: <body class="edit-profile-page"> atau <div class="edit-profile-page"> */
+.edit-profile-page {
+  background: linear-gradient(#cbb8ff, #dbe8ff);
+  /* Gradien dari ungu muda ke biru muda (vertikal) */
+  min-height: 100vh;
+  /* Minimal tinggi 100% viewport height (full screen) */
+  font-family: "Poppins", sans-serif;
+  /* Font Poppins, fallback ke sans-serif */
+  display: flex;
+  /* Menggunakan flexbox */
+  justify-content: center;
+  /* Konten horizontal di tengah */
+  align-items: center;
+  /* Konten vertikal di tengah */
+}
+
+/* Container/kotak form edit profile
+   Target HTML: <div class="edit-container"> */
+.edit-container {
+  background-color: #e7cff8;
+  /* Background ungu pastel */
+  border-radius: 20px;
+  /* Sudut melengkung 20px */
+  padding: 25px;
+  /* Jarak dalam 25px semua sisi */
+  width: 300px;
+  /* Lebar tetap 300px */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Bayangan hitam dengan opacity 10% */
+}
+
+/* Heading/judul di halaman edit
+   Target HTML: <h2> di dalam .edit-container */
+.edit-container h2 {
+  text-align: center;
+  /* Teks di tengah */
+  color: #000;
+  /* Warna teks hitam */
+  margin-bottom: 20px;
+  /* Jarak bawah 20px */
+  font-weight: 700;
+  /* Font bold */
+}
+
+/* Label form di edit profile
+   Target HTML: <label> di dalam <form class="edit-form"> */
+.edit-form label {
+  display: block;
+  /* Label tampil sebagai block (full width) */
+  font-size: 14px;
+  /* Ukuran font 14px */
+  font-weight: 600;
+  /* Font semi-bold */
+  color: #333;
+  /* Warna teks abu gelap */
+  margin-top: 10px;
+  /* Jarak atas 10px */
+}
+
+/* Input field di form edit
+   Target HTML: <input> di dalam .edit-form */
+.edit-form input {
+  width: 100%;
+  /* Lebar 100% dari parent */
+  padding: 8px 10px;
+  /* Jarak dalam: 8px atas-bawah, 10px kiri-kanan */
+  margin-top: 5px;
+  /* Jarak atas 5px dari label */
+  border-radius: 10px;
+  /* Sudut melengkung 10px */
+  border: 1px solid #aaa;
+  /* Border abu-abu 1px */
+  outline: none;
+  /* Hilangkan outline default browser */
+  font-size: 14px;
+  /* Ukuran font 14px */
+}
+
+/* Efek saat input field di-focus (diklik)
+   Aktif saat user sedang mengetik di input */
+.edit-form input:focus {
+  border-color: #7b5ac6;
+  /* Border berubah jadi ungu */
+}
+
+/* ========================================
+   GROUP TOMBOL EDIT (SAVE & CANCEL)
+   ======================================== */
+
+/* Container untuk tombol-tombol di form edit
+   Target HTML: <div class="edit-btn-group"> */
+.edit-btn-group {
+  display: flex;
+  /* Menggunakan flexbox */
+  justify-content: space-between;
+  /* Tombol tersebar dengan jarak sama */
+  margin-top: 20px;
+  /* Jarak atas 20px */
+}
+
+/* Styling dasar untuk tombol save dan cancel
+   Target HTML: <button class="save-btn"> atau <button class="cancel-btn"> */
+.save-btn, .cancel-btn {
+  flex: 1;
+  /* Kedua tombol ukurannya sama (membagi ruang secara merata) */
+  padding: 10px;
+  /* Jarak dalam 10px semua sisi */
+  border: none;
+  /* Hilangkan border default */
+  border-radius: 10px;
+  /* Sudut melengkung 10px */
+  font-weight: 600;
+  /* Font semi-bold */
+  cursor: pointer;
+  /* Kursor pointer saat hover */
+  transition: background 0.3s ease;
+  /* Animasi smooth untuk perubahan background */
+}
+
+/* Tombol Save khusus */
+.save-btn {
+  background-color: #7b5ac6;
+  /* Background ungu */
+  color: white;
+  /* Teks putih */
+  margin-right: 8px;
+  /* Jarak kanan 8px (jarak dengan tombol cancel) */
+}
+
+/* Efek hover tombol save */
+.save-btn:hover {
+  background-color: #6042a5;
+  /* Background ungu lebih gelap saat hover */
+}
+
+/* Tombol Cancel khusus */
+.cancel-btn {
+  background-color: #d1c4e9;
+  /* Background ungu sangat muda */
+  color: #333;
+  /* Teks abu gelap */
+}
+
+/* Efek hover tombol cancel */
+.cancel-btn:hover {
+  background-color: #bbaee0;
+  /* Background ungu muda lebih gelap saat hover */
+}
+
+/* ========================================
+   BOTTOM NAVIGATION BAR
+   ======================================== */
+
+/* Navigation bar di bagian bawah layar
+   Target HTML: <nav class="bottom-nav">
+   Fungsi: Menu navigasi utama aplikasi mobile */
+.bottom-nav {
+  position: fixed;
+  /* Posisi fixed agar tetap di tempat saat scroll */
+  bottom: 0;
+  /* Menempel di bawah layar */
+  left: 0;
+  /* Mulai dari kiri layar */
+  width: 100vw;
+  /* Lebar 100% viewport width (full width) */
+  max-width: none;
+  /* Tidak ada batasan max-width */
+  display: flex;
+  /* Menggunakan flexbox */
+  justify-content: space-around;
+  /* Item tersebar merata dengan jarak sama */
+  padding: 10px 0;
+  /* Jarak dalam: 10px atas-bawah, 0 kiri-kanan */
+  background-color: #cbbdfc;
+  /* Background ungu muda */
+  border-top-left-radius: 16px;
+  /* Sudut kiri atas melengkung 16px */
+  border-top-right-radius: 16px;
+  /* Sudut kanan atas melengkung 16px */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  /* Bayangan ke atas (negatif) */
+  z-index: 1000;
+  /* Layer paling atas agar tidak tertutup elemen lain */
+}
+
+/* Item menu di bottom navigation
+   Target HTML: <a href="#" class="nav-item">
+   Biasanya berisi icon + label */
+.bottom-nav .nav-item {
+  text-decoration: none;
+  /* Hilangkan garis bawah link */
+  font-size: 12px;
+  /* Ukuran font 12px */
+  color: #5832a4;
+  /* Warna teks ungu tua */
+  padding: 8px 20px;
+  /* Jarak dalam: 8px atas-bawah, 20px kiri-kanan */
+  transition: all 0.3s ease;
+  /* Animasi smooth untuk semua properti */
+  display: flex;
+  /* Menggunakan flexbox */
+  flex-direction: column;
+  /* Susun vertikal (icon di atas, text di bawah) */
+  align-items: center;
+  /* Konten horizontal di tengah */
+}
+
+/* State active untuk nav item
+   Target HTML: <a class="nav-item active">
+   Menandai halaman yang sedang aktif */
+.bottom-nav .nav-item.active {
+  color: #311b92;
+  /* Warna teks ungu sangat tua */
+  transform: scale(1.1);
+  /* Ukuran membesar 110% */
+}
+
+/* Efek hover untuk nav item */
+.bottom-nav .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Background putih transparan 20% */
+  border-radius: 10px;
+  /* Sudut melengkung 10px */
+}
+
+/* Icon di dalam nav item
+   Target HTML: <img class="nav-icon" src="icon.svg"> atau <i class="nav-icon"> */
+.nav-icon {
+  width: 26px;
+  /* Lebar icon 26px */
+  height: 27px;
+  /* Tinggi icon 27px */
+  display: block;
+  /* Display block */
+  margin: 0 auto 4px;
+  /* Margin: 0 kiri-kanan (center), 4px bawah (jarak ke text) */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* ========================================
+   OPTIMASI UNTUK PERANGKAT TOUCH
+   Media query untuk device dengan layar sentuh
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* hover: none = tidak punya hover capability (touch device)
+     pointer: coarse = pointer tidak presisi (jari, bukan mouse) */
+
+  /* Memperbesar ukuran minimum elemen yang bisa di-tap/sentuh
+     44px adalah ukuran minimum recommended untuk touch target
+     Target: Semua elemen interaktif */
+  .option,
+  .small-btn,
+  .add-med-btn,
+  .nav-item,
+  .menu-item {
+    min-height: 44px;
+    /* Tinggi minimal 44px (mudah di-tap) */
+    display: flex;
+    /* Gunakan flexbox */
+    align-items: center;
+    /* Konten vertikal di tengah */
+    justify-content: center;
+    /* Konten horizontal di tengah */
+  }
+
+  /* Padding lebih besar untuk nav item di touch device */
+  .bottom-nav .nav-item {
+    padding: 10px 20px;
+    /* Padding: 10px atas-bawah, 20px kiri-kanan */
+  }
+
+  /* Label checkbox obat diperbesar untuk touch device */
+  .med-checkboxes label {
+    padding: 8px !important;
+    /* Padding 8px (paksa override dengan !important) */
+    font-size: 13px !important;
+    /* Font size 13px (paksa override) */
+  }
+
+  /* Input dosis diperbesar untuk keterbacaan di mobile */
+  #doseInput {
+    font-size: 14px !important;
+    /* Font size 14px (paksa override) */
+  }
+}
+
+/* ========================================
+   LAYAR SANGAT KECIL (0 - 360px)
+   Contoh: iPhone SE, Samsung Galaxy Fold
+   ======================================== */
+@media (max-width: 360px) {
+
+  /* Padding body lebih kecil untuk menghemat ruang */
+  body.home-page {
+    padding: 12px;
+    /* Padding 12px semua sisi */
+  }
+
+  /* Judul "Today" diperkecil */
+  .today-title {
+    font-size: 28px;
+    /* Font size 28px */
+  }
+
+  /* Card obat diperkecil */
+  .med-card {
+    padding: 12px;
+    /* Padding 12px */
+  }
+
+  /* Opsi dalam group diperkecil */
+  .option-group .option {
+    padding: 3px 8px;
+    /* Padding: 3px atas-bawah, 8px kiri-kanan */
+    font-size: 11px;
+    /* Font size 11px */
+  }
+
+  /* Input form diperkecil */
+  .form-input {
+    font-size: 13px;
+    /* Font size 13px */
+    padding: 5px 8px;
+    /* Padding: 5px atas-bawah, 8px kiri-kanan */
+  }
+
+  /* Tanggal di kalender diperkecil */
+  .date {
+    width: 32px;
+    /* Lebar 32px */
+    height: 32px;
+    /* Tinggi 32px */
+    font-size: 12px;
+    /* Font size 12px */
+  }
+
+  /* Card kalender diperkecil */
+  .calendar-card {
+    margin: 0 10px 20px;
+    /* Margin: 0 atas, 10px kiri-kanan, 20px bawah */
+    padding: 15px;
+    /* Padding 15px */
+  }
+
+  /* Icon navigasi diperkecil */
+  .nav-icon {
+    width: 22px;
+    /* Lebar 22px */
+    height: 22px;
+    /* Tinggi 22px */
+  }
+}
+
+/* ========================================
+   MOBILE (0 - 480px)
+   Contoh: iPhone, Samsung Galaxy, smartphone standar
+   ======================================== */
+@media (max-width: 480px) {
+
+  /* Padding body dikurangi untuk mobile */
+  body.home-page {
+    padding: 8px;
+    /* Padding 8px */
+  }
+
+  /* Padding bottom nav dikurangi */
+  .bottom-nav {
+    padding: 8px 0;
+    /* Padding: 8px atas-bawah, 0 kiri-kanan */
+  }
+
+  /* Ukuran tanggal untuk mobile */
+  .date {
+    width: 35px;
+    /* Lebar 35px */
+    height: 35px;
+    /* Tinggi 35px */
+    font-size: 13px;
+    /* Font size 13px */
+  }
+
+  /* Header diperkecil */
+  .header h1 {
+    font-size: 20px;
+    /* Font size 20px */
+  }
+}
+
+/* ========================================
+   TABLET (481px - 768px)
+   Contoh: iPad Mini, Samsung Tab, tablet 7-8 inch
+   ======================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* min-width: 481px = minimal 481px (lebih dari mobile)
+     max-width: 768px = maksimal 768px (kurang dari desktop) */
+
+  /* Container halaman dibatasi max-width dan padding lebih besar */
+  body.home-page,
+  .schedule-page,
+  .profile-page {
+    max-width: 600px;
+    /* Lebar maksimal 600px */
+    padding: 20px;
+    /* Padding 20px */
+  }
+
+  /* Card obat lebih besar untuk tablet */
+  .med-card {
+    padding: 20px;
+    /* Padding 20px */
+  }
+
+  /* Opsi group lebih besar */
+  .option-group .option {
+    padding: 6px 12px;
+    /* Padding: 6px atas-bawah, 12px kiri-kanan */
+    font-size: 13px;
+    /* Font size 13px */
+  }
+
+  /* Input form lebih besar */
+  .form-input {
+    font-size: 15px;
+    /* Font size 15px */
+  }
+
+  /* Card kalender lebih besar */
+  .calendar-card {
+    margin: 0 20px 30px;
+    /* Margin: 0 atas, 20px kiri-kanan, 30px bawah */
+  }
+
+  /* Tanggal lebih besar */
+  .date {
+    width: 45px;
+    /* Lebar 45px */
+    height: 45px;
+    /* Tinggi 45px */
+    font-size: 15px;
+    /* Font size 15px */
+  }
+}
+
+/* ========================================
+   DESKTOP & LAPTOP (769px ke atas)
+   Contoh: Laptop, Desktop, iPad Pro
+   ======================================== */
+@media (min-width: 769px) {
+  /* min-width: 769px = minimal 769px (layar besar) */
+
+  /* Body home page dibatasi dan di-center */
+  body.home-page {
+    max-width: 500px;
+    /* Lebar maksimal 500px (tidak terlalu lebar) */
+    padding: 24px;
+    /* Padding 24px */
+  }
+
+  /* Judul "Today" lebih besar */
+  .today-title {
+    font-size: 40px;
+    /* Font size 40px */
+  }
+
+  /* Card obat lebih besar dan spacing lebih */
+  .med-card {
+    padding: 24px;
+    /* Padding 24px */
+    margin-bottom: 30px;
+    /* Jarak bawah 30px */
+  }
+
+  /* Opsi group lebih besar */
+  .option-group .option {
+    padding: 6px 14px;
+    /* Padding: 6px atas-bawah, 14px kiri-kanan */
+    font-size: 14px;
+    /* Font size 14px */
+  }
+
+  /* Section tambah obat lebih besar */
+  .add-med-section {
+    padding: 16px 20px;
+    /* Padding: 16px atas-bawah, 20px kiri-kanan */
+  }
+
+  /* Halaman schedule lebih lebar */
+  .schedule-page {
+    max-width: 600px;
+    /* Lebar maksimal 600px */
+  }
+
+  /* Card kalender lebih besar */
+  .calendar-card {
+    margin: 0 30px 40px;
+    /* Margin: 0 atas, 30px kiri-kanan, 40px bawah */
+    padding: 30px;
+    /* Padding 30px */
+  }
+
+  /* Tanggal lebih besar */
+  .date {
+    width: 50px;
+    /* Lebar 50px */
+    height: 50px;
+    /* Tinggi 50px */
+    font-size: 16px;
+    /* Font size 16px */
+  }
+
+  /* Header lebih besar */
+  .header h1 {
+    font-size: 26px;
+    /* Font size 26px */
+  }
+
+  /* Halaman profile dibatasi */
+  .profile-page {
+    max-width: 500px;
+    /* Lebar maksimal 500px */
+  }
+
+  /* Card profile lebih besar */
+  .profile-card {
+    padding: 25px;
+    /* Padding 25px */
+  }
+
+  /* Gambar profile lebih besar */
+  .profile-img {
+    width: 80px;
+    /* Lebar 80px */
+    height: 80px;
+    /* Tinggi 80px */
+  }
+
+  /* Nama user lebih besar */
+  .name {
+    font-size: 18px;
+    /* Font size 18px */
+  }
+
+  /* Menu item lebih besar */
+  .menu-item {
+    padding: 18px 10px;
+    /* Padding: 18px atas-bawah, 10px kiri-kanan */
+    font-size: 16px;
+    /* Font size 16px */
+  }
+
+  /* Container edit lebih lebar */
+  .edit-container {
+    width: 400px;
+    /* Lebar 400px */
+    padding: 35px;
+    /* Padding 35px */
+  }
+
+  /* Form container lebih lebar */
+  .form-container {
+    width: 400px;
+    /* Lebar 400px */
+    padding: 40px;
+    /* Padding 40px */
+  }
+}
+
+/* ========================================
+   EXTRA LARGE SCREENS (1200px ke atas)
+   Contoh: Desktop besar, monitor 24 inch+
+   ======================================== */
+@media (min-width: 1200px) {
+  /* min-width: 1200px = minimal 1200px (layar sangat besar) */
+
+  /* Tetap batasi lebar agar tidak terlalu lebar dan tetap centered */
+  body.home-page,
+  .schedule-page,
+  .profile-page {
+    max-width: 600px;
+    /* Lebar maksimal 600px */
+  }
+}
+
+/* ========================================
+   LANDSCAPE MODE (Layar horizontal dengan tinggi maksimal 500px)
+   Contoh: Smartphone/tablet yang diputar horizontal
+   ======================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* max-height: 500px = tinggi maksimal 500px
+     orientation: landscape = posisi horizontal */
+
+  /* Padding dikurangi karena tinggi layar terbatas */
+  .splash-screen,
+  .welcome-screen,
+  body.form-page {
+    padding: 20px;
+    /* Padding 20px */
+  }
+
+  /* Logo diperkecil karena tinggi terbatas */
+  .logo-circle {
+    width: 150px;
+    /* Lebar 150px */
+    height: 150px;
+    /* Tinggi 150px */
+  }
+
+  /* Gambar logo diperkecil */
+  .logo-img {
+    width: 120px;
+    /* Lebar 120px */
+  }
+
+  /* Nama app diperkecil */
+  .app-name {
+    font-size: 20px;
+    /* Font size 20px */
+  }
+
+  /* Form container bisa di-scroll karena tinggi terbatas */
+  .form-container {
+    max-height: 90vh;
+    /* Tinggi maksimal 90% viewport height */
+    overflow-y: auto;
+    /* Enable scroll vertikal jika konten melebihi tinggi */
+  }
+}

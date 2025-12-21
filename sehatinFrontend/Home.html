@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Mengatur karakter agar mendukung huruf dan simbol -->
+    <meta charset="UTF-8" />
+
+    <!-- Agar tampilan responsif di berbagai ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Judul halaman yang tampil di tab browser -->
+    <title>Sehat In - Home</title>
+
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="home-page">
+    <!-- Container utama untuk seluruh isi halaman -->
+    <div class="container">
+      <!-- Judul bagian Today -->
+      <h2 class="today-title">
+        Today
+        <!-- Icon obat pada judul -->
+        <img src="aset/obattoday.png" alt="obattoday" class="title-icon" />
+      </h2>
+
+      <!-- Kartu untuk menampilkan dan memilih tanggal -->
+      <div class="date-card">
+        <label for="date">Date</label>
+        <div class="date-wrapper">
+          <!-- Input tanggal -->
+          <input type="date" id="date" value="0000-00-00" />
+        </div>
+        <!-- Format tanggal -->
+        <small>DD/MM/YYYY</small>
+      </div>
+
+      <!-- Kartu pengingat minum obat -->
+      <div class="med-card">
+        <!-- Header pengingat obat -->
+        <div class="med-header">
+          <p>
+            <!-- Icon obat -->
+            <img src="aset/banyakobat.png" alt="banyakobat" class="med-icon" />
+            <strong>Minum obatmu!</strong>
+          </p>
+        </div>
+
+        <!-- Isi pengaturan pengingat -->
+        <div class="med-body">
+          <!-- Bagian frekuensi minum obat -->
+          <p><b>Frequency</b></p>
+
+          <!-- Grup tombol pilihan frekuensi -->
+          <div class="option-group" id="freqOptions">
+            <button type="button" class="option active">Everyday</button>
+            <button type="button" class="option">Once a week</button>
+            <button type="button" class="option">Twice a day</button>
+            <button type="button" class="option">Custom</button>
+          </div>
+
+          <!-- Bagian jadwal minum obat -->
+          <p><b>Schedule</b></p>
+
+          <!-- Container jadwal (diisi lewat JavaScript) -->
+          <div id="scheduleContainer"></div>
+
+          <!-- Tombol menambahkan jadwal baru -->
+          <button type="button" id="addScheduleBtn" class="small-btn">
+            ➕ Tambah Schedule
+          </button>
+        </div>
+      </div>
+
+      <!-- Bagian menambahkan nama obat -->
+      <div class="add-med-section">
+        <p><b>Add Medication</b></p>
+
+        <!-- Input dan tombol tambah obat -->
+        <div class="add-med-input-group">
+          <input
+            type="text"
+            id="medNameInput"
+            placeholder="Masukkan nama obat"
+            class="med-input"
+          />
+          <button type="button" class="add-med-btn" id="addMedBtn">
+            ➕ Add
+          </button>
+        </div>
+      </div>
+
+      <!-- List obat yang sudah ditambahkan -->
+      <ul id="medList" class="med-list"></ul>
+    </div>
+
+    <!-- Navigasi bawah -->
+    <nav class="bottom-nav">
+      <!-- Menu Home -->
+      <a href="Home.html" class="nav-item active">
+        <img src="aset/home.png" alt="home" class="nav-icon" />
+      </a>
+
+      <!-- Menu Jadwal -->
+      <a href="jadwalTersimpan.html" class="nav-item">
+        <img src="aset/schedule.png" alt="schedule" class="nav-icon" />
+      </a>
+
+      <!-- Menu Profil -->
+      <a href="profile.html" class="nav-item">
+        <img src="aset/profile.png" alt="profile" class="nav-icon" />
+      </a>
+    </nav>
+
+    <!-- Menghubungkan file JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

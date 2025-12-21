@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Metadata halaman -->
+    <meta charset="UTF-8" />
+    <!-- Set karakter encoding ke UTF-8 untuk mendukung bahasa Indonesia -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Responsif untuk berbagai ukuran layar -->
+    <title>Edit Profil - Sehat In</title>
+    <!-- Judul tab browser -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Link ke file CSS eksternal -->
+  </head>
+  <body class="edit-profile-page">
+    <!-- Class untuk styling khusus halaman edit profil -->
+
+    <!-- Container utama untuk form edit profil -->
+    <div class="edit-container">
+      <h2>Edit Profil</h2>
+      <!-- Judul halaman -->
+
+      <!-- Form untuk mengedit informasi profil pengguna -->
+      <form class="edit-form">
+        <!-- Input Nama Lengkap -->
+        <label for="editName">Nama Lengkap</label>
+        <!-- Label untuk input nama -->
+        <input
+          type="text"
+          id="editName"
+          placeholder="Masukkan nama baru"
+          required
+        />
+        <!-- Input teks untuk nama, wajib diisi -->
+
+        <!-- Input Email -->
+        <label for="editEmail">Email</label>
+        <!-- Label untuk input email -->
+        <input
+          type="email"
+          id="editEmail"
+          placeholder="Masukkan email baru"
+          required
+        />
+        <!-- Input email dengan validasi format email -->
+
+        <!-- Input No Telepon -->
+        <label for="editPhone">No Telepon</label>
+        <!-- Label untuk input nomor telepon -->
+        <input
+          type="text"
+          id="editPhone"
+          placeholder="Masukkan no telepon baru"
+          required
+        />
+        <!-- Input teks untuk nomor telepon -->
+
+        <!-- Grup tombol aksi -->
+        <div class="edit-btn-group">
+          <button type="submit" class="save-btn">Simpan</button>
+          <!-- Tombol submit untuk menyimpan perubahan -->
+          <button type="button" class="cancel-btn">Batal</button>
+          <!-- Tombol batal untuk membatalkan perubahan -->
+        </div>
+      </form>
+    </div>
+
+    <!-- Link ke file JavaScript eksternal untuk fungsi interaktif -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

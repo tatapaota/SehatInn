@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="id">
+  <!-- Tag pembuka HTML dengan atribut lang="id" yang menandakan bahasa halaman adalah Bahasa Indonesia -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Mengatur karakter encoding ke UTF-8 agar bisa menampilkan karakter Indonesia dan internasional dengan benar -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Mengatur tampilan responsif di perangkat mobile - lebar mengikuti lebar layar dengan zoom awal 1.0 -->
+
+    <title>My Profile - Sehat In</title>
+    <!-- Judul yang muncul di tab browser -->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Menghubungkan file CSS eksternal untuk styling/tampilan halaman -->
+  </head>
+
+  <body class="profile-page">
+    <!-- Tag BODY dengan class "profile-page" - semua konten yang terlihat ada di sini -->
+
+    <div class="container">
+      <!-- Div container utama untuk membungkus semua konten, biasanya untuk mengatur layout -->
+
+      <!-- Profile Card -->
+      <div class="profile-card">
+        <!-- Kartu profil utama yang menampilkan informasi user -->
+
+        <h2>My Profil !</h2>
+        <!-- Heading/judul bagian profil -->
+
+        <div class="profile-content">
+          <!-- Container untuk konten profil (foto + teks) -->
+
+          <img
+            src="aset/profile-icon.png"
+            alt="Profile"
+            class="profile-img"
+            onerror="this.style.display='none'"
+          />
+
+          <div class="profile-text">
+            <!-- Container untuk teks informasi profil -->
+
+            <p class="name">Loading...</p>
+            <!-- Paragraf untuk menampilkan nama user, default "Loading..." sebelum data dimuat -->
+
+            <p class="email">Loading...</p>
+            <!-- Paragraf untuk menampilkan email user -->
+
+            <p class="phone">Loading...</p>
+            <!-- Paragraf untuk menampilkan nomor telepon user -->
+          </div>
+        </div>
+
+        <button class="edit-btn">Edit</button>
+        <!-- Tombol untuk mengedit profil -->
+      </div>
+
+      <!-- Menu Section -->
+      <!-- Bagian menu pilihan untuk user -->
+      <div class="menu-section">
+        <!-- Container untuk menu-menu -->
+
+        <a href="termsConditions.html" class="menu-item">
+          <!-- Link menu yang mengarah ke halaman Terms and Conditions -->
+
+          <span>Terms and conditions</span>
+          <!-- Teks menu "Terms and conditions" -->
+
+          <span class="arrow">→</span>
+          <!-- Ikon panah untuk indikator link -->
+        </a>
+
+        <div class="menu-item logout">
+          <!-- Menu item untuk logout - menggunakan div karena akan dihandle dengan JavaScript -->
+
+          <span>Log Out</span>
+          <!-- Teks "Log Out" -->
+
+          <span class="arrow">→</span>
+          <!-- Ikon panah -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <!-- Navigasi bawah yang fixed di bagian bawah layar -->
+    <nav class="bottom-nav">
+      <!-- Tag nav untuk navigasi -->
+
+      <a href="Home.html" class="nav-item">
+        <!-- Link navigasi ke halaman Home -->
+        <img src="aset/home.png" alt="home" class="nav-icon" />
+        <!-- Ikon home -->
+      </a>
+
+      <a href="jadwalTersimpan.html" class="nav-item">
+        <!-- Link navigasi ke halaman jadwal tersimpan -->
+        <img src="aset/schedule.png" alt="schedule" class="nav-icon" />
+        <!-- Ikon jadwal -->
+      </a>
+
+      <a href="profile.html" class="nav-item active">
+        <!-- Link navigasi ke halaman profile (halaman ini) - dengan class "active" menandakan ini halaman yang sedang dibuka -->
+        <img src="aset/profile.png" alt="profile" class="nav-icon" />
+        <!-- Ikon profile -->
+      </a>
+    </nav>
+
+    <script src="js/script.js"></script>
+    <!-- Menghubungkan file JavaScript eksternal untuk fungsi interaktif (edit, logout, load data user, dll) -->
+  </body>
+</html>

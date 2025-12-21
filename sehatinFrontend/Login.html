@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Pengaturan karakter agar mendukung huruf khusus -->
+    <meta charset="UTF-8" />
+
+    <!-- Pengaturan agar tampilan responsif di berbagai ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Judul halaman yang muncul di tab browser -->
+    <title>Log In - Sehat In</title>
+
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <!-- Body halaman login -->
+  <body class="form-page">
+    <!-- Container utama form login -->
+    <div class="form-container">
+      <!-- Judul form -->
+      <h2 class="form-title">Log In</h2>
+
+      <!-- Garis dekorasi di bawah judul -->
+      <div class="underline-title"></div>
+
+      <!-- Form login -->
+      <form id="loginForm">
+        <!-- Input username -->
+        <div class="input-group">
+          <!-- Icon user -->
+          <img src="aset/user.png" alt="user icon" class="icon-img" />
+
+          <!-- Field input username -->
+          <input type="text" name="username" placeholder="Username" required />
+        </div>
+
+        <!-- Input password -->
+        <div class="input-group password-wrapper">
+          <!-- Icon gembok -->
+          <img src="aset/lock_2.png" alt="lock icon" class="icon-img" />
+
+          <!-- Field input password -->
+          <input
+            type="password"
+            name="password"
+            id="passwordInput"
+            placeholder="Password"
+            required
+          />
+
+          <!-- Tombol untuk menampilkan / menyembunyikan password -->
+          <div
+            class="toggle-password-wrapper"
+            onclick="togglePasswordVisibility()"
+          >
+            <!-- Icon mata -->
+            <img
+              src="aset/eye-closed.png"
+              alt="toggle password"
+              class="toggle-password"
+              id="togglePasswordIcon"
+            />
+          </div>
+        </div>
+
+        <!-- Tombol submit login -->
+        <button type="submit" class="btn-primary">Log In</button>
+
+        <!-- Link menuju halaman registrasi -->
+        <p class="register-link">
+          Belum punya akun? <a href="register.html">Daftar</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- Gambar dekorasi di halaman login -->
+    <img src="aset/obat-dekorasi.png" class="decor" alt="Dekorasi" />
+
+    <!-- Menghubungkan file JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
